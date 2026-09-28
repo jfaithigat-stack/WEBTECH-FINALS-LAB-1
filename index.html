@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Information Card</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="page">
+    <header class="page__header">
+      <h1>User Info Card</h1>
+      <p class="page__subtitle">Fill in the form, then click <strong>Show My Info</strong> to see your card.</p>
+    </header>
+
+    <div class="layout">
+      <!-- ============ INPUT FORM ============ -->
+      <section class="panel" aria-labelledby="form-title">
+        <h2 id="form-title" class="panel__title">Your Details</h2>
+
+        <form id="infoForm" class="form" novalidate>
+          <!-- 1. Full Name of the user -->
+          <div class="field">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Alforja Albert Q." autocomplete="name" />
+          </div>
+
+          <!-- 2. Email address -->
+          <div class="field">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="faithigat@gmail.com" autocomplete="email" />
+          </div>
+
+          <!-- 3. Age (digit) -->
+          <div class="field">
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" min="0" max="120" placeholder="19" />
+          </div>
+
+          <!-- 4. Phone number of the user -->
+          <div class="field">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="+63 9911229386" autocomplete="tel" />
+          </div>
+
+          <!-- 5. Birthday (date) -->
+          <div class="field">
+            <label for="birthday">Birthday</label>
+            <input type="date" id="birthday" name="birthday" />
+          </div>
+
+          <!-- 6. Country (select) -->
+          <div class="field">
+            <label for="country">Country</label>
+            <select id="country" name="country">
+              <option value="">-- Select a country --</option>
+              <option value="Philippines">Philippines</option>
+              <option value="United States">United States</option>
+              <option value="Japan">Japan</option>
+              <option value="Australia">Australia</option>
+              <option value="United Kingdom">United Kingdom</option>
+              <option value="Canada">Canada</option>
+            </select>
+          </div>
+
+          <!-- 7. Website (url) -->
+          <div class="field">
+            <label for="website">Website / Portfolio</label>
+            <input type="url" id="website" name="website" placeholder="https://myportfolio.com" />
+          </div>
+
+          <!-- 8. Favorite Color (radio group) -->
+          <fieldset class="field field--group">
+            <legend>Favorite Color</legend>
+            <div class="radio-row">
+              <label class="radio"><input type="radio" name="favColor" value="Yellow" />Yellow</label>
+              <label class="radio"><input type="radio" name="favColor" value="Green" /> Green</label>
+              <label class="radio"><input type="radio" name="favColor" value="Blue" checked /> Blue</label>
+              <label class="radio"><input type="radio" name="favColor" value="Purple" /> Purple</label>
+            </div>
+          </fieldset>
+
+          <!-- 9. Bio (textarea) -->
+          <div class="field">
+            <label for="bio">Short Bio</label>
+            <textarea id="bio" name="bio" rows="3" placeholder="Tell us a little about yourself..."></textarea>
+          </div>
+
+          <!-- 10. Consent (checkbox) -->
+          <div class="field field--inline">
+            <label class="checkbox">
+              <input type="checkbox" id="consent" name="consent" />
+              I agree to display my information
+            </label>
+          </div>
+
+          <div class="actions">
+            <button type="button" id="showBtn" class="btn btn--primary">Show My Info</button>
+            <button type="button" id="clearBtn" class="btn btn--ghost">Clear</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- ============ OUTPUT / SUMMARY ============ -->
+      <section class="panel" aria-labelledby="output-title">
+        <h2 id="output-title" class="panel__title">Your Info Card</h2>
+
+        <div id="output" class="card card--empty" aria-live="polite">
+          <p class="card__placeholder">your information will appear here once you click <strong>Show My Info</strong>.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
